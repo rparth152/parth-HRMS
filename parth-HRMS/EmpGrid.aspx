@@ -1,25 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Emplist.aspx.cs" Inherits="parth_HRMS.Emplist" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EmpGrid.aspx.cs" Inherits="parth_HRMS.EmpGrid" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <title>Smarthr Admin Template</title>
-	           
-	
-	<link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css"/>
-	<script src="//cdn.datatables.net/2.3.7/js/dataTables.min.js" ></script>
+        <title>Smarthr Admin </title>
+           
 
-    <script>
-        $(document).ready(function () {
-            $('#<%= GridView1.ClientID%>').DataTable({
-                pageLength: 5,
-                lengthMenu: [5, 10, 25, 50]
-            });
-        });
-    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
-        
-		<div>
+    		<div>
           <div class="page-wrapper">
 			<div class="content">
 				<!-- Breadcrumb -->

@@ -1,5 +1,5 @@
 ﻿using iTextSharp.text;
-using iTextSharp.text.html.simpleparser; 
+using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
@@ -10,16 +10,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//gridview eval with status <span class='badge <%#Eval("Status").ToString()=="Active"?"bg-success":"bg-danger" %>'><%# Eval("Status") %> </span>
-//update del
-//export button
-//user manager dashboard
-//add emp button
-//intigration
-//google auth
+
 namespace parth_HRMS
 {
-    public partial class Emplist : System.Web.UI.Page
+    public partial class EmpGrid : System.Web.UI.Page
     {
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
@@ -27,13 +21,14 @@ namespace parth_HRMS
             string cnf = ConfigurationManager.ConnectionStrings["dbconn"].ConnectionString;
             conn = new SqlConnection(cnf);
             conn.Open();
-            if (!IsPostBack) {
+            if (!IsPostBack)
+            {
                 BindGridViewData();
                 BindDataListData();
                 FetchDept();
                 Fetchrole();
                 FetchDesi();
-                DataList1.Visible = false;
+                GridView1.Visible = false;
                 if (GridView1.Rows.Count > 0)
                 {
                     GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
@@ -51,7 +46,8 @@ namespace parth_HRMS
             GridView1.DataSource = rdr;
             GridView1.DataBind();
         }
-        private void Fetchrole() {
+        private void Fetchrole()
+        {
             string q = "exec frole";
             SqlCommand cmd = new SqlCommand(q, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -108,23 +104,23 @@ namespace parth_HRMS
             password = TextBox7.Text;
             phone = TextBox9.Text;
             about = TextBox11.Text;
-            
+
             FileUpload1.SaveAs(Server.MapPath("Images/") + Path.GetFileName(FileUpload1.FileName));
             profilePic = "Images/" + Path.GetFileName(FileUpload1.FileName);
             roleId = int.Parse(DropDownList3.SelectedValue);
-            deptId =int.Parse(DropDownList1.SelectedValue);
-            desiId =int.Parse(DropDownList2.SelectedValue);
+            deptId = int.Parse(DropDownList1.SelectedValue);
+            desiId = int.Parse(DropDownList2.SelectedValue);
 
             doj = DateTime.Parse(TextBox4.Text);
             dob = DateTime.Parse(TextBoxDOB.Text);
             gender = DropDownGender.SelectedValue;
-            address = TextBoxAddress.Text;             
+            address = TextBoxAddress.Text;
 
 
 
             string q = $"EXEC spInsertUser '{firstName}','{lastName}','{email}','{password}','{phone}','{roleId}','{deptId}','{desiId}','{doj}','{dob}','{gender}','{address}','{about}','{profilePic}'";//insert sp
             SqlCommand cmd = new SqlCommand(q, conn);
-            cmd.ExecuteNonQuery();     
+            cmd.ExecuteNonQuery();
         }
 
         //protected void Button2_Click(object sender, EventArgs e)

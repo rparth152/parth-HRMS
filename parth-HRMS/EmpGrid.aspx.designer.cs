@@ -11,7 +11,7 @@ namespace parth_HRMS
 {
 
 
-    public partial class Emplist
+    public partial class EmpGrid
     {
 
         /// <summary>

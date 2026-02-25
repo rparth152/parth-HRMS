@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.5, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.5\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.9.1\lib\net462\System.Data.SqlClient.dll</HintPath>
@@ -71,9 +77,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addAdminDoc.aspx" />
+    <Content Include="addAdminEmpDoc.aspx" />
     <Content Include="AddDesignation.aspx" />
     <Content Include="AddRoleMaster.aspx" />
+    <Content Include="AdminDocList.aspx" />
+    <Content Include="AdminFileUpl.aspx" />
+    <Content Include="EmpDocList.aspx" />
+    <Content Include="EmpFileUpload.aspx" />
+    <Content Include="EmpGrid.aspx" />
     <Content Include="Emplist.aspx" />
+    <Content Include="EmpUploadedDocList.aspx" />
+    <Content Include="UplDocList.aspx" />
     <Content Include="webformAdd-Dept.aspx" />
     <Content Include="webformAdd-Role.aspx" />
     <Content Include="AdminDashboard.aspx" />
@@ -2009,6 +2024,20 @@
     <Content Include="AddDept.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addAdminDoc.aspx.cs">
+      <DependentUpon>addAdminDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addAdminDoc.aspx.designer.cs">
+      <DependentUpon>addAdminDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addAdminEmpDoc.aspx.cs">
+      <DependentUpon>addAdminEmpDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addAdminEmpDoc.aspx.designer.cs">
+      <DependentUpon>addAdminEmpDoc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddDesignation.aspx.cs">
       <DependentUpon>AddDesignation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2023,12 +2052,61 @@
     <Compile Include="AddRoleMaster.aspx.designer.cs">
       <DependentUpon>AddRoleMaster.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminDocList.aspx.cs">
+      <DependentUpon>AdminDocList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDocList.aspx.designer.cs">
+      <DependentUpon>AdminDocList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFileUpl.aspx.cs">
+      <DependentUpon>AdminFileUpl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFileUpl.aspx.designer.cs">
+      <DependentUpon>AdminFileUpl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpDocList.aspx.cs">
+      <DependentUpon>EmpDocList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpDocList.aspx.designer.cs">
+      <DependentUpon>EmpDocList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpFileUpload.aspx.cs">
+      <DependentUpon>EmpFileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpFileUpload.aspx.designer.cs">
+      <DependentUpon>EmpFileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpGrid.aspx.cs">
+      <DependentUpon>EmpGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpGrid.aspx.designer.cs">
+      <DependentUpon>EmpGrid.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Emplist.aspx.cs">
       <DependentUpon>Emplist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Emplist.aspx.designer.cs">
       <DependentUpon>Emplist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpUploadedDocList.aspx.cs">
+      <DependentUpon>EmpUploadedDocList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpUploadedDocList.aspx.designer.cs">
+      <DependentUpon>EmpUploadedDocList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UplDocList.aspx.cs">
+      <DependentUpon>UplDocList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UplDocList.aspx.designer.cs">
+      <DependentUpon>UplDocList.aspx</DependentUpon>
     </Compile>
     <Compile Include="webformAdd-Dept.aspx.cs">
       <DependentUpon>webformAdd-Dept.aspx</DependentUpon>
@@ -11758,6 +11836,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddRoleMaster.aspx.cs" Inherits="parth_HRMS.AddRoleMaster" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css" />
  <script src="//cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
  <script>
@@ -2517,43 +2513,5 @@
         <!-- /Delete Modal -->
 
     </div>
-    <!-- /Main Wrapper -->
-
-    <!-- jQuery -->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-
-    <!-- Bootstrap Core JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Feather Icon JS -->
-    <script src="assets/js/feather.min.js"></script>
-
-    <!-- Slimscroll JS -->
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
-
-    <!-- Color Picker JS -->
-    <script src="assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
-
-    <!-- Datatable JS -->
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
-
-    <!-- Daterangepikcer JS -->
-    <script src="assets/js/moment.js"></script>
-    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-    <!-- Select2 JS -->
-    <script src="assets/plugins/select2/js/select2.min.js"></script>
-
-    <!-- Chart JS -->
-    <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-    <script src="assets/plugins/apexchart/chart-data.js"></script>
-
-    <!-- Bootstrap Tagsinput JS -->
-    <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-
-    <!-- Custom JS -->
-    <script src="assets/js/theme-colorpicker.js"></script>
-    <script src="assets/js/script.js"></script>
+    
 </asp:Content>
