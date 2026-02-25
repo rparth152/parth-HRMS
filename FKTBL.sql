@@ -1,4 +1,4 @@
-use PulseTeam1;
+
 
 /****** Object:  Table [dbo].[Departments]    Script Date: 2/20/2026 8:52:12 PM ******/
 SET ANSI_NULLS ON
