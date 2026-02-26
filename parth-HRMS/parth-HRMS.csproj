@@ -11866,6 +11866,7 @@
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="Employee.Master" />
+    <Content Include="Pulse360_FinalDb.bak" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
