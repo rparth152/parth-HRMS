@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,7 +22,7 @@ namespace parth_HRMS
             if (!IsPostBack)
             {
                 FetchStaus();
-                BindGridViewData();
+                FeatchRole();
                 if (GridView1.Rows.Count > 0)
                 {
                     GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
@@ -50,19 +51,29 @@ namespace parth_HRMS
             string q = $"exec Deldept {Name}";
             SqlCommand cmd = new SqlCommand(q, conn);
             cmd.ExecuteNonQuery();
-            BindGridViewData();
+            FeatchRole();
         }
-        private void BindGridViewData()
+        public void FeatchRole()
         {
+            string q = "exec sprole";
+            SqlDataAdapter ada = new SqlDataAdapter(q, conn);
+            DataSet ds = new DataSet();
+            ada.Fill(ds);
 
-            string q = $"exec sprole ";
-
-            SqlCommand cmd = new SqlCommand(q, conn);
-            SqlDataReader rdr = cmd.ExecuteReader();
-
-            GridView1.DataSource = rdr;
+            GridView1.DataSource = ds;
             GridView1.DataBind();
         }
+        //private void BindGridViewData()
+        //{
+
+        //    string q = $"exec sprole ";
+
+        //    SqlCommand cmd = new SqlCommand(q, conn);
+        //    SqlDataReader rdr = cmd.ExecuteReader();
+
+        //    GridView1.DataSource = rdr;
+        //    GridView1.DataBind();
+        //}
         protected void Button1_Click(object sender, EventArgs e)
         {
             string Role = Session["Role"].ToString();
@@ -71,7 +82,7 @@ namespace parth_HRMS
             string q = $"exec sp_Role '{_role}','{status}','{Role}'";
             SqlCommand cmd = new SqlCommand(q, conn);
             cmd.ExecuteNonQuery();
-            BindGridViewData();
+            FeatchRole();
         }
         protected void Button2_Click(object sender, EventArgs e)
         { 

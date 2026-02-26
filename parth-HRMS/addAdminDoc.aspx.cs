@@ -25,17 +25,17 @@ namespace parth_HRMS
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            string docName = TextBox1.Text;
+            //string docName = TextBox1.Text;
 
-            SqlConnection conn = new SqlConnection(cs);
+            //SqlConnection conn = new SqlConnection(cs);
 
-            string q = "Insert into addAdminDocNames (DocName) values (@DocName)";
-            SqlCommand cmd = new SqlCommand(q, conn);
-            cmd.Parameters.AddWithValue("@DocName", docName);
-            Response.Write("<script>alert('Document Added')</script>");
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            //string q = "Insert into addAdminDocNames (DocName) values (@DocName)";
+            //SqlCommand cmd = new SqlCommand(q, conn);
+            //cmd.Parameters.AddWithValue("@DocName", docName);
+            //Response.Write("<script>alert('Document Added')</script>");
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

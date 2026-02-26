@@ -10,7 +10,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//gridview eval with status <span class='badge <%#Eval("Status").ToString()=="Active"?"bg-success":"bg-danger" %>'><%# Eval("Status") %> </span>
 //update del
 //export button
 //user manager dashboard
@@ -44,12 +43,12 @@ namespace parth_HRMS
         private void BindGridViewData()
         {
             string q = $"exec fuser ";
-
             SqlCommand cmd = new SqlCommand(q, conn);
-            SqlDataReader rdr = cmd.ExecuteReader();
-
-            GridView1.DataSource = rdr;
-            GridView1.DataBind();
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                GridView1.DataSource = rdr;
+                GridView1.DataBind();
+            }
         }
         private void Fetchrole() {
             string q = "exec frole";
@@ -109,7 +108,10 @@ namespace parth_HRMS
             phone = TextBox9.Text;
             about = TextBox11.Text;
             
-            FileUpload1.SaveAs(Server.MapPath("Images/") + Path.GetFileName(FileUpload1.FileName));
+            string imagePath = Server.MapPath("Images/");
+            if (!Directory.Exists(imagePath))
+                Directory.CreateDirectory(imagePath);
+            FileUpload1.SaveAs(imagePath + Path.GetFileName(FileUpload1.FileName));
             profilePic = "Images/" + Path.GetFileName(FileUpload1.FileName);
             roleId = int.Parse(DropDownList3.SelectedValue);
             deptId =int.Parse(DropDownList1.SelectedValue);

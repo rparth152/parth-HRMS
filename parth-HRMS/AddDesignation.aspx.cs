@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,7 +22,7 @@ namespace parth_HRMS
             {
                 FetchDept();
                 FetchStaus();
-                BindGridViewData();
+                FeatchDesignation();
                 if (GridView1.Rows.Count > 0)
                 {
                     GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
@@ -53,26 +54,37 @@ namespace parth_HRMS
             DropDownList1.DataValueField = "DepartmentId";
             DropDownList1.DataBind();
         }
-        private void BindGridViewData()
+        //private void BindGridViewData()
+        //{
+        //    string q = $"exec fetchDesi ";
+
+        //    SqlCommand cmd = new SqlCommand(q, conn);
+        //    SqlDataReader rdr = cmd.ExecuteReader();
+
+        //    GridView1.DataSource = rdr;
+        //    GridView1.DataBind();
+        //}
+        public void FeatchDesignation()
         {
-            string q = $"exec fetchDesi ";
+            string q = "exec sp_featchDesignation";
+            SqlDataAdapter ada = new SqlDataAdapter(q, conn);
+            DataTable dt = new DataTable();
+            ada.Fill(dt);
 
-            SqlCommand cmd = new SqlCommand(q, conn);
-            SqlDataReader rdr = cmd.ExecuteReader();
-
-            GridView1.DataSource = rdr;
+            GridView1.DataSource = dt;
             GridView1.DataBind();
+
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string Desiname = TextBox1.Text;
-            string Deptid = DropDownList1.SelectedValue;
-            string status = DropDownList2.SelectedValue;
-            string Role = Session["Role"].ToString();
-            string q = $"exec adddesi '{Desiname}','{status}','{Role}','{Deptid}'";
-            SqlCommand cmd = new SqlCommand(q, conn);
-            cmd.ExecuteNonQuery();
-            BindGridViewData();
+            //string Desiname = TextBox1.Text;
+            //string Deptid = DropDownList1.SelectedValue;
+            //string status = DropDownList2.SelectedValue;
+            //string Role = Session["Role"].ToString();
+            //string q = $"exec adddesi '{Desiname}','{status}','{Role}','{Deptid}'";
+            //SqlCommand cmd = new SqlCommand(q, conn);
+            //cmd.ExecuteNonQuery();
+            //FeatchDesignation();
 
             //Session["Deptid"] = rdr["DepartmentId"];
             //string Deptid = Session["Deptid"].ToString();

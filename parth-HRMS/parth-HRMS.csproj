@@ -1,5 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -49,6 +48,9 @@
     <Reference Include="itextsharp, Version=5.5.13.5, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.5\lib\net461\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.9.1\lib\net462\System.Data.SqlClient.dll</HintPath>
@@ -72,23 +74,32 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="addAdminDoc.aspx" />
     <Content Include="addAdminEmpDoc.aspx" />
+    <Content Include="AddDeptmasterpage.aspx" />
     <Content Include="AddDesignation.aspx" />
     <Content Include="AddRoleMaster.aspx" />
     <Content Include="AdminDocList.aspx" />
     <Content Include="AdminFileUpl.aspx" />
+    <Content Include="AttendanceReport.aspx" />
     <Content Include="EmpDocList.aspx" />
     <Content Include="EmpFileUpload.aspx" />
     <Content Include="EmpGrid.aspx" />
     <Content Include="Emplist.aspx" />
+    <Content Include="EmployeeReports.aspx" />
     <Content Include="EmpUploadedDocList.aspx" />
+    <Content Include="EventsCalender.aspx" />
+    <Content Include="Holidays.aspx" />
+    <Content Include="HolidaysList.aspx" />
+    <Content Include="ManagerDashboard.aspx" />
+    <Content Include="Promotion.aspx" />
+    <Content Include="Resignation.aspx" />
+    <Content Include="Termination.aspx" />
+    <Content Include="TrainersList.aspx" />
+    <Content Include="TrainingList.aspx" />
+    <Content Include="TrainingTypes.aspx" />
     <Content Include="UplDocList.aspx" />
+    <Content Include="UserDashboard.aspx" />
     <Content Include="webformAdd-Dept.aspx" />
     <Content Include="webformAdd-Role.aspx" />
     <Content Include="AdminDashboard.aspx" />
@@ -2038,6 +2049,13 @@
     <Compile Include="addAdminEmpDoc.aspx.designer.cs">
       <DependentUpon>addAdminEmpDoc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddDeptmasterpage.aspx.cs">
+      <DependentUpon>AddDeptmasterpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDeptmasterpage.aspx.designer.cs">
+      <DependentUpon>AddDeptmasterpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddDesignation.aspx.cs">
       <DependentUpon>AddDesignation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2065,6 +2083,13 @@
     </Compile>
     <Compile Include="AdminFileUpl.aspx.designer.cs">
       <DependentUpon>AdminFileUpl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceReport.aspx.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AttendanceReport.aspx.designer.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="EmpDocList.aspx.cs">
       <DependentUpon>EmpDocList.aspx</DependentUpon>
@@ -2094,6 +2119,13 @@
     <Compile Include="Emplist.aspx.designer.cs">
       <DependentUpon>Emplist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeReports.aspx.cs">
+      <DependentUpon>EmployeeReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeReports.aspx.designer.cs">
+      <DependentUpon>EmployeeReports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EmpUploadedDocList.aspx.cs">
       <DependentUpon>EmpUploadedDocList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2101,12 +2133,103 @@
     <Compile Include="EmpUploadedDocList.aspx.designer.cs">
       <DependentUpon>EmpUploadedDocList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EventsCalender.aspx.cs">
+      <DependentUpon>EventsCalender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsCalender.aspx.designer.cs">
+      <DependentUpon>EventsCalender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Holidays.aspx.cs">
+      <DependentUpon>Holidays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Holidays.aspx.designer.cs">
+      <DependentUpon>Holidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HolidaysList.aspx.cs">
+      <DependentUpon>HolidaysList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HolidaysList.aspx.designer.cs">
+      <DependentUpon>HolidaysList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.Master.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager.Master.designer.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerDashboard.aspx.cs">
+      <DependentUpon>ManagerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagerDashboard.aspx.designer.cs">
+      <DependentUpon>ManagerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Promotion.aspx.cs">
+      <DependentUpon>Promotion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Promotion.aspx.designer.cs">
+      <DependentUpon>Promotion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resignation.aspx.cs">
+      <DependentUpon>Resignation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resignation.aspx.designer.cs">
+      <DependentUpon>Resignation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Termination.aspx.cs">
+      <DependentUpon>Termination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Termination.aspx.designer.cs">
+      <DependentUpon>Termination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainersList.aspx.cs">
+      <DependentUpon>TrainersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainersList.aspx.designer.cs">
+      <DependentUpon>TrainersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingList.aspx.cs">
+      <DependentUpon>TrainingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainingList.aspx.designer.cs">
+      <DependentUpon>TrainingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingTypes.aspx.cs">
+      <DependentUpon>TrainingTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainingTypes.aspx.designer.cs">
+      <DependentUpon>TrainingTypes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UplDocList.aspx.cs">
       <DependentUpon>UplDocList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UplDocList.aspx.designer.cs">
       <DependentUpon>UplDocList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.Master.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee.Master.designer.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserDashboard.aspx.cs">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDashboard.aspx.designer.cs">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="webformAdd-Dept.aspx.cs">
       <DependentUpon>webformAdd-Dept.aspx</DependentUpon>
@@ -11739,8 +11862,10 @@
     <Content Include="assets\scss\vendors\_datatables.scss" />
     <Content Include="assets\scss\vendors\_rangepicker-plugin.scss" />
     <Content Include="assets\scss\vendors\_select2.scss" />
+    <Content Include="Manager.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="Employee.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -11865,11 +11990,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

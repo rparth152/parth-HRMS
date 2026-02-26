@@ -26,10 +26,7 @@ namespace parth_HRMS
         }
 
         public void Bindchart() {
-            string q = @"SELECT Status, 
-                     COUNT(*) AS TotalCount
-                     FROM [User]
-                     GROUP BY Status";
+            string q = @"SELECT Status, COUNT(*) AS TotalCount FROM [User] GROUP BY Status";
 
             SqlDataAdapter da = new SqlDataAdapter(q, conn);
             DataTable dt = new DataTable();

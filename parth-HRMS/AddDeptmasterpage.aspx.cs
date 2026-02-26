@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace parth_HRMS
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class AddDeptmasterpage : System.Web.UI.Page
     {
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +30,8 @@ namespace parth_HRMS
 
             }
         }
-        public void datatable() {
+        public void datatable()
+        {
             if (GridView1.Rows.Count > 0)
             {
                 GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
@@ -74,7 +75,7 @@ namespace parth_HRMS
         {
 
             //string Role = Session["Role"].ToString();
-            //string dept = TextBox1.Text;
+            ////string dept = TextBox1.Text;
             //string status = DropDownList1.SelectedValue;
             //string q = $"exec [dbo].[Adddept] '{dept}','{status}','{Role}'";
             //SqlCommand cmd = new SqlCommand(q, conn);
@@ -109,5 +110,5 @@ namespace parth_HRMS
             //BindGridViewData();
         }
 
-        }
+    }
 }
